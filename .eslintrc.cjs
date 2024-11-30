@@ -5,7 +5,7 @@ const config = {
     "project": true
   },
   "plugins": [
-    'prettier', // Prettier plugin for ESLint
+    'prettier',
     'react',
     "@typescript-eslint"
   ],
@@ -43,13 +43,13 @@ const config = {
         }
       }
     ],
-    'prettier/prettier': 'error', // Make Prettier rules enforceable as errors
-    'react/react-in-jsx-scope': 'off', // React 17+ doesn't require React in scope
-    'react/prop-types': 'off', // If you're using TypeScript, prop-types are unnecessary
+    'prettier/prettier': 'error',
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
   },
   settings: {
     react: {
-      version: 'detect', // Automatically detect the version of React
+      version: 'detect',
     },
   },
 }
