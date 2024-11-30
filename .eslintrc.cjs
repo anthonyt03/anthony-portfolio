@@ -14,15 +14,6 @@ const config = {
     'plugin:@typescript-eslint/recommended', // TypeScript specific rules
     'plugin:prettier/recommended', // Prettier integration
   ],
-  // overrides: [
-  //   {
-  //     files: ['src/components/ui/**/*'],
-  //     rules: {
-  //       '@typescript-eslint/no-require-imports': 'off',
-  //       'react-hooks/exhaustive-deps': 'off',
-  //     },
-  //   },
-  // ],
   rules: {
     '@typescript-eslint/array-type': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',

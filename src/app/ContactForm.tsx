@@ -123,7 +123,6 @@ export default function ContactForm() {
                     <InputTextarea
                       id='message'
                       placeholder=''
-                      type='text'
                       className='resize-none'
                       {...field}
                     />
