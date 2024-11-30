@@ -5,12 +5,18 @@ const config = {
     "project": true
   },
   "plugins": [
+    'prettier', // Prettier plugin for ESLint
+    'react',
     "@typescript-eslint"
   ],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked"
+    "plugin:@typescript-eslint/stylistic-type-checked",
+    'eslint:recommended', // Use recommended ESLint rules
+    'plugin:react/recommended', // React specific rules
+    'plugin:@typescript-eslint/recommended', // TypeScript specific rules
+    'plugin:prettier/recommended', // Prettier integration
   ],
   "rules": {
     "@typescript-eslint/array-type": "off",
@@ -36,7 +42,15 @@ const config = {
           "attributes": false
         }
       }
-    ]
-  }
+    ],
+    'prettier/prettier': 'error', // Make Prettier rules enforceable as errors
+    'react/react-in-jsx-scope': 'off', // React 17+ doesn't require React in scope
+    'react/prop-types': 'off', // If you're using TypeScript, prop-types are unnecessary
+  },
+  settings: {
+    react: {
+      version: 'detect', // Automatically detect the version of React
+    },
+  },
 }
 module.exports = config;
