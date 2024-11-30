@@ -1,13 +1,13 @@
 'use client'
 import React from 'react'
-import { Label } from '../components/ui/label'
-import { Input } from '../components/ui/input'
-import { InputTextarea } from '../components/ui/input-textarea'
+import { Label } from '~/components/ui/label'
+import { Input } from '~/components/ui/input'
+import { InputTextarea } from '~/components/ui/input-textarea'
 import { cn } from '~/lib/utils'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { Button } from '../components/ui/button'
+import { Button } from '~/components/ui/button'
 import {
   Form,
   FormControl,
@@ -16,8 +16,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '../components/ui/form'
-import { Textarea } from '../components/ui/textarea'
+} from '~/components/ui/form'
+import { useToast } from '../hooks/use-toast.ts'
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(50),
@@ -27,6 +27,7 @@ const formSchema = z.object({
 })
 
 export default function ContactForm() {
+  const { toast } = useToast()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,6 +41,9 @@ export default function ContactForm() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values)
+    toast({
+      description: 'Your message has been sent.',
+    })
   }
   return (
     <div className='mx-auto w-full max-w-md bg-white dark:bg-black'>
