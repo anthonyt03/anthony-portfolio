@@ -4,7 +4,7 @@ import { cn } from '~/lib/utils'
 import ContactButton from './ContactButton'
 import { ShootingStars } from '~/components/ui/shooting-stars'
 import { StarsBackground } from '~/components/ui/stars-background'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { TracingBeam } from '~/components/ui/tracing-beam'
 
 export default function HomePage() {
   const flipWords = [
@@ -15,44 +15,31 @@ export default function HomePage() {
     'Programmer',
     'Techie',
   ]
-  const { scrollYProgress } = useScroll()
-  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '-1%'])
 
   return (
     <>
-      <div className='relative h-full w-full'>
+      <div className='mx-auto p-8 lg:p-0'>
         {/* Fixed Background */}
-        <div className='fixed inset-0 h-full w-full bg-neutral-900'>
-          <div className='h-full w-full bg-cover bg-fixed bg-center'>
-            <ShootingStars />
-            <StarsBackground />
-          </div>
+        <div className='fixed inset-0 z-[-1] bg-neutral-900'>
+          <ShootingStars />
+          <StarsBackground />
         </div>
-
-        {/* Parallax Content */}
-        <motion.div
-          className='relative z-10 flex flex-col place-items-center'
-          style={{ y: contentY }}
-        >
-          {/* Each "section" is its own div */}
-          <div className='flex h-screen flex-col items-start justify-center px-12 sm:max-w-[70%] sm:px-8 lg:max-w-full 2xl:max-w-full'>
+        {/* Intro Div */}
+        <div className='relative z-20 flex h-screen w-full flex-col items-center justify-center'>
+          <div className='flex flex-col items-start gap-4'>
             <h3
-              className={cn(
-                'relative z-20 mb-4 mt-8 text-sm font-normal text-neutral-300 md:text-xl',
-              )}
+              className={cn('text-md font-normal text-neutral-300 lg:text-xl')}
             >
               Hi, my name is
             </h3>
             <h1
-              className={cn(
-                'relative z-20 mb-5 text-3xl font-bold text-neutral-100 md:text-6xl',
-              )}
+              className={cn('text-4xl font-bold text-neutral-100 lg:text-6xl')}
             >
               Anthony Tran.
             </h1>
             <div
               className={cn(
-                'z-20 flex flex-row text-lg font-normal text-neutral-300 dark:text-neutral-400 md:text-3xl',
+                'flex flex-row font-normal text-neutral-300 dark:text-neutral-400 lg:text-3xl',
               )}
             >
               I&apos;m a
@@ -60,15 +47,16 @@ export default function HomePage() {
                 <FlipWords words={flipWords} /> <br />
               </div>
             </div>
-            <p className={cn('z-20 mt-6 w-[70vw] text-neutral-300 md:w-1/2')}>
+            <p className={cn('text-md w-3/4 text-neutral-300 sm:w-1/2')}>
               Based in Northern Virginia, I specialize in building amazing
               frontend applications and everything in between.
             </p>
-            <div className='z-20 -ml-4 mt-10'>
+            <div className='-ml-4'>
               <ContactButton />
             </div>
           </div>
-        </motion.div>
+        </div>
+        <div className='z-99 h-screen w-full bg-white'></div>
       </div>
     </>
   )
