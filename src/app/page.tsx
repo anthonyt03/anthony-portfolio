@@ -21,7 +21,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className='relative h-full w-full p-8'>
+      <div className='relative h-full w-full'>
         {/* Fixed Background */}
         <div className='fixed inset-0 h-full w-full bg-neutral-900'>
           <div className='h-full w-full bg-cover bg-fixed bg-center'>
@@ -36,7 +36,7 @@ export default function HomePage() {
           style={{ y: contentY }}
         >
           {/* Each "section" is its own div */}
-          <div className='-mt-20 flex h-screen flex-col items-start justify-center sm:max-w-[70%] lg:max-w-full 2xl:max-w-full'>
+          <div className='flex h-screen flex-col items-start justify-center px-8 sm:max-w-[70%] lg:max-w-full 2xl:max-w-full'>
             <h3
               className={cn(
                 'relative z-20 mb-4 mt-8 text-sm font-normal text-neutral-300 md:text-xl',
@@ -46,7 +46,7 @@ export default function HomePage() {
             </h3>
             <h1
               className={cn(
-                'relative z-20 mb-3 text-3xl font-bold text-neutral-100 md:text-6xl',
+                'relative z-20 mb-5 text-3xl font-bold text-neutral-100 md:text-6xl',
               )}
             >
               Anthony Tran.
