@@ -36,7 +36,7 @@ export default function HomePage() {
           style={{ y: contentY }}
         >
           {/* Each "section" is its own div */}
-          <div className='flex h-screen flex-col items-start justify-center px-8 sm:max-w-[70%] lg:max-w-full 2xl:max-w-full'>
+          <div className='flex h-screen flex-col items-start justify-center px-12 sm:max-w-[70%] sm:px-8 lg:max-w-full 2xl:max-w-full'>
             <h3
               className={cn(
                 'relative z-20 mb-4 mt-8 text-sm font-normal text-neutral-300 md:text-xl',
@@ -61,7 +61,7 @@ export default function HomePage() {
                 <FlipWords words={flipWords} /> <br />
               </div>
             </div>
-            <p className={cn('z-20 mt-6 w-3/4 text-neutral-300 md:w-1/2')}>
+            <p className={cn('z-20 mt-6 w-[70vw] text-neutral-300 md:w-1/2')}>
               Based in Northern Virginia, I specialize in building amazing
               frontend applications and everything in between.
             </p>
