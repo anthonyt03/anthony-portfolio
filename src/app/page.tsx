@@ -1,5 +1,4 @@
 'use client'
-import { Boxes } from '~/components/ui/background-boxes'
 import { FlipWords } from '~/components/ui/flip-words'
 import { cn } from '~/lib/utils'
 import ContactButton from './ContactButton'
