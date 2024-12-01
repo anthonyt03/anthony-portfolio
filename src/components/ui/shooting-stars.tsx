@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "~/lib/utils";
+import { cn } from "../../lib/utils";
 import React, { useEffect, useState, useRef } from "react";
 
 interface ShootingStar {
@@ -44,12 +44,12 @@ const getRandomStartPoint = () => {
 export const ShootingStars: React.FC<ShootingStarsProps> = ({
   minSpeed = 10,
   maxSpeed = 30,
-  minDelay = 1200,
-  maxDelay = 4200,
+  minDelay = 1000,
+  maxDelay = 3500,
   starColor = "#9E00FF",
   trailColor = "#2EB9DF",
-  starWidth = 10,
-  starHeight = 1,
+  starWidth = 20,
+  starHeight = 2,
   className,
 }) => {
   const [star, setStar] = useState<ShootingStar | null>(null);
