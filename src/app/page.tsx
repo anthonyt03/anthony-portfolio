@@ -36,7 +36,7 @@ export default function HomePage() {
           style={{ y: contentY }}
         >
           {/* Each "section" is its own div */}
-          <div className='flex h-screen flex-col items-start justify-center sm:max-w-[70%] lg:max-w-full 2xl:max-w-full'>
+          <div className='flex h-screen translate-y-[-5vh] flex-col items-start justify-center sm:max-w-[70%] lg:max-w-full 2xl:max-w-full'>
             <h3
               className={cn(
                 'relative z-20 mb-4 mt-8 text-sm font-normal text-neutral-300 md:text-xl',
