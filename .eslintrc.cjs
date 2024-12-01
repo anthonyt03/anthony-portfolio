@@ -14,6 +14,7 @@ const config = {
     'plugin:@typescript-eslint/recommended', // TypeScript specific rules
     'plugin:prettier/recommended', // Prettier integration
   ],
+  ignorePatterns: ['src/components/ui/**/*'],
   rules: {
     '@typescript-eslint/array-type': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
