@@ -5,7 +5,7 @@ import { cn } from "~/lib/utils";
 
 export const FlipWords = ({
   words,
-  duration = 3000,
+  duration = 2000,
   className,
 }: {
   words: string[];
@@ -84,7 +84,7 @@ export const FlipWords = ({
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
                   duration: 0.2,
                 }}
-                className="inline-block"
+                className="inline-block text-neutral-100"
               >
                 {letter}
               </motion.span>

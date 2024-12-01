@@ -8,16 +8,8 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { Button } from '~/components/ui/button'
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '~/components/ui/form'
-import { useToast } from '../hooks/use-toast.ts'
+import { Form, FormControl, FormField, FormItem } from '~/components/ui/form'
+import { useToast } from '~/hooks/use-toast'
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(50),
@@ -38,10 +30,10 @@ export default function ContactForm() {
     },
   })
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+    // TODO: Implement authentication (NextAuth) and link to my email
     console.log(values)
     toast({
+      variant: 'success',
       description: 'Your message has been sent.',
     })
   }

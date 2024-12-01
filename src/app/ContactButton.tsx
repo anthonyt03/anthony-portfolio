@@ -9,13 +9,13 @@ import ContactForm from './ContactForm'
 export default function ContactButton() {
   return (
     <Modal>
-      <ModalTrigger className='group/modal-btn flex justify-center bg-black text-white dark:bg-white dark:text-black'>
-        <span className='text-center transition duration-500 group-hover/modal-btn:translate-x-40'>
-          Contact Me
-        </span>
-        <div className='absolute inset-0 z-20 flex -translate-x-40 items-center justify-center text-white transition duration-500 group-hover/modal-btn:translate-x-0'>
-          ✉️
-        </div>
+      <ModalTrigger>
+        <button className='relative p-[3px]'>
+          <div className='absolute inset-0 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500' />
+          <div className='group relative z-20 rounded-[6px] bg-black px-8 py-2 text-neutral-300 transition duration-200 hover:bg-transparent'>
+            Contact Me
+          </div>
+        </button>
       </ModalTrigger>
       <ModalBody>
         <ModalContent>
