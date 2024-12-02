@@ -22,12 +22,76 @@ export default function HomePage() {
     {
       id: 1,
       name: 'Svelte',
-      image: '/svelte.png',
+      image: '/svelte.webp',
+    },
+    {
+      id: 3,
+      name: 'JavaScript',
+      image: '/js.png',
+    },
+    {
+      id: 4,
+      name: 'shadcn/ui',
+      image: '/shadcn.png',
+    },
+    {
+      id: 5,
+      name: 'Skeleton',
+      image: '/skeleton.png',
     },
     {
       id: 2,
-      name: 'Skeleton',
-      image: '/skeleton.png',
+      name: 'Docker',
+      image: '/docker.png',
+    },
+  ]
+  const people2 = [
+    {
+      id: 1,
+      name: 'React',
+      image: '/react.png',
+    },
+    {
+      id: 2,
+      name: 'JavaScript',
+      image: '/js.png',
+    },
+    {
+      id: 3,
+      name: 'Material UI',
+      image: '/mui.png',
+    },
+    {
+      id: 4,
+      name: 'CesiumJS',
+      image: '/cesium.png',
+    },
+    {
+      id: 5,
+      name: 'SpringBoot',
+      image: '/springboot.png',
+    },
+  ]
+  const people3 = [
+    {
+      id: 1,
+      name: 'React',
+      image: '/react.png',
+    },
+    {
+      id: 2,
+      name: 'JavaScript',
+      image: '/js.png',
+    },
+    {
+      id: 3,
+      name: 'Material UI',
+      image: '/mui.png',
+    },
+    {
+      id: 5,
+      name: 'SpringBoot',
+      image: '/springboot.png',
     },
   ]
   const data = [
@@ -72,6 +136,9 @@ export default function HomePage() {
             • Created an image display grid and manipulation component to
             enhance user accessibility
           </p>
+          <div className='justify-left flex h-full w-full flex-row pt-4'>
+            <AnimatedTooltip items={people2} />
+          </div>
         </div>
       ),
     },
@@ -93,6 +160,9 @@ export default function HomePage() {
             • Adapted application to meet project requirements from client
             through new features
           </p>
+          <div className='justify-left flex h-full w-full flex-row pt-4'>
+            <AnimatedTooltip items={people3} />
+          </div>
         </div>
       ),
     },
@@ -107,7 +177,10 @@ export default function HomePage() {
           <StarsBackground />
         </div>
         {/* Introduction */}
-        <div className='relative z-20 flex h-screen w-full flex-col items-center justify-center px-4'>
+        <div
+          className='relative z-20 flex h-screen w-full flex-col items-center justify-center px-4'
+          id='intro'
+        >
           <div className='flex flex-col items-start gap-4'>
             <h3
               className={cn('text-md font-normal text-neutral-300 lg:text-xl')}
@@ -139,7 +212,7 @@ export default function HomePage() {
           </div>
         </div>
         {/* Professional Experience */}
-        <div className='h-full'>
+        <div className='h-full' id='experience'>
           <Timeline data={data} />
         </div>
         <div className='h-screen w-full'></div>
