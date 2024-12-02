@@ -4,10 +4,9 @@ import { cn } from '~/lib/utils'
 import ContactButton from './ContactButton'
 import { ShootingStars } from '~/components/ui/shooting-stars'
 import { StarsBackground } from '~/components/ui/stars-background'
-import { TracingBeam } from '~/components/ui/tracing-beam'
 import { Timeline } from '~/components/ui/timeline'
-import Image from 'next/image'
 import React from 'react'
+import { AnimatedTooltip } from '~/components/ui/animated-tooltip'
 
 export default function HomePage() {
   const flipWords = [
@@ -18,13 +17,26 @@ export default function HomePage() {
     'Programmer',
     'Techie',
   ]
+
+  const people = [
+    {
+      id: 1,
+      name: 'Svelte',
+      image: '/svelte.png',
+    },
+    {
+      id: 2,
+      name: 'Skeleton',
+      image: '/skeleton.png',
+    },
+  ]
   const data = [
     {
       title: 'Software Engineer',
       company: 'Peraton',
       time: 'June 2024 - Present',
       content: (
-        <div className='flex flex-col'>
+        <div className='flex h-full flex-col'>
           <p>
             • Developing frontend UI for a graph-based encrypted signal
             communication application.
@@ -37,6 +49,9 @@ export default function HomePage() {
             • Frontend development efforts played a role in securing a $2.2
             million contract increase in funding
           </p>
+          <div className='justify-left flex h-full w-full flex-row pt-4'>
+            <AnimatedTooltip items={people} />
+          </div>
         </div>
       ),
     },
@@ -127,7 +142,7 @@ export default function HomePage() {
         <div className='h-full'>
           <Timeline data={data} />
         </div>
-        <div className='h-screen w-full bg-white'></div>
+        <div className='h-screen w-full'></div>
       </div>
     </>
   )
