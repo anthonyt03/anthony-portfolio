@@ -1,3 +1,4 @@
+// Timeline
 const skills = [
   {
     id: 1,
@@ -49,7 +50,6 @@ const getSkill = (name: string) => {
   const matchingSkill = skills.find(skill => skill.name === name)
   return matchingSkill
 }
-
 export const constructSkillItems = (
   names: string[],
 ): { id: number; name: string; image: string }[] => {
@@ -60,3 +60,19 @@ export const constructSkillItems = (
         skill !== undefined,
     )
 }
+
+// NavBar
+export const navItems = [
+  {
+    name: 'Home',
+    link: '',
+  },
+  {
+    name: 'Experience',
+    link: '#experience',
+  },
+  {
+    name: 'Projects',
+    link: 'projects',
+  },
+]

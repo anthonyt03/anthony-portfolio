@@ -1,10 +1,12 @@
 'use client'
 import { ShootingStars } from '~/components/ui/shooting-stars'
 import { StarsBackground } from '~/components/ui/stars-background'
+import { FloatingNav } from '~/components/ui/floating-navbar'
 import React from 'react'
 import IntroSection from './IntroSection'
 import TimelineSection from './TimelineSection'
 import ScrollIndicator from '~/components/ScrollIndicator'
+import { navItems } from '~/constants/constants'
 
 export default function HomePage() {
   return (
@@ -15,6 +17,7 @@ export default function HomePage() {
           <ShootingStars />
           <StarsBackground />
         </div>
+        <FloatingNav navItems={navItems} />
         <ScrollIndicator />
         {/* Introduction */}
         <IntroSection />
