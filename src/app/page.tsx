@@ -4,6 +4,7 @@ import { StarsBackground } from '~/components/ui/stars-background'
 import React from 'react'
 import IntroSection from './IntroSection'
 import TimelineSection from './TimelineSection'
+import ScrollIndicator from '~/components/ScrollIndicator'
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
           <ShootingStars />
           <StarsBackground />
         </div>
+        <ScrollIndicator />
         {/* Introduction */}
         <IntroSection />
         {/* Professional Experience */}

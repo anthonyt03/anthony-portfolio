@@ -1,7 +1,7 @@
 'use client'
 import { FlipWords } from '~/components/ui/flip-words'
 import { cn } from '~/lib/utils'
-import ContactButton from './ContactButton'
+import ContactButton from '../components/ContactButton'
 import React from 'react'
 
 export default function IntroSection() {
