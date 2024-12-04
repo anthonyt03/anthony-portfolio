@@ -10,8 +10,8 @@ import { useForm } from 'react-hook-form'
 import { Button } from '~/components/ui/button'
 import { Form, FormControl, FormField, FormItem } from '~/components/ui/form'
 import { useToast } from '~/hooks/use-toast'
-import { Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(50),
@@ -138,7 +138,6 @@ export default function ContactForm() {
           </Button>
 
           <div className='my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700' />
-
           <div className='flex flex-col space-y-4'>
             <a
               href='https://github.com/anthonyt03'

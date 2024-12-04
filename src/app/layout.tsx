@@ -3,6 +3,7 @@ import '~/styles/globals.css'
 import { GeistSans } from 'geist/font/sans'
 import { type Metadata } from 'next'
 import { Toaster } from '../components/ui/toaster'
+import Footer from '~/components/Footer'
 
 export const metadata: Metadata = {
   title: "Anthony's Portfolio",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         {children}
         <Toaster />
+        <Footer />
       </body>
     </html>
   )

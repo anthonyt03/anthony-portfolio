@@ -1,3 +1,12 @@
+import React from 'react'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '~/components/ui/tooltip'
+import { BriefcaseBusiness, Cog, House } from 'lucide-react'
+
 // Timeline
 const skills = [
   {
@@ -66,13 +75,49 @@ export const navItems = [
   {
     name: 'Home',
     link: '',
+    icon: (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>
+            <House className='h-4 w-4' />
+          </TooltipTrigger>
+          <TooltipContent side='bottom'>
+            <p>Home</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    ),
   },
   {
     name: 'Experience',
     link: '#experience',
+    icon: (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>
+            <BriefcaseBusiness className='h-4 w-4' />
+          </TooltipTrigger>
+          <TooltipContent side='bottom'>
+            <p>Experience</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    ),
   },
   {
     name: 'Projects',
     link: 'projects',
+    icon: (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>
+            <Cog className='h-4 w-4' />
+          </TooltipTrigger>
+          <TooltipContent side='bottom'>
+            <p>Projects</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    ),
   },
 ]
