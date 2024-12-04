@@ -1,5 +1,4 @@
 import React from 'react'
-import { cn } from '~/lib/utils' // Import your utility function if needed
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 const Footer = () => {

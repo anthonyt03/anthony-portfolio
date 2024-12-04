@@ -34,11 +34,7 @@ export const FloatingNav = ({
       if (scrollYProgress.get() < 0.00000001) {
         setVisible(false);
       } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
+        setVisible(true);
       }
     }
   });
