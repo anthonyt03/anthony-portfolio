@@ -10,8 +10,8 @@ import { useForm } from 'react-hook-form'
 import { Button } from '~/components/ui/button'
 import { Form, FormControl, FormField, FormItem } from '~/components/ui/form'
 import { useToast } from '~/hooks/use-toast'
-import Link from 'next/link'
-import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import { useForm as useFormFS } from '@formspree/react'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(50),
@@ -22,6 +22,7 @@ const formSchema = z.object({
 
 export default function ContactForm() {
   const { toast } = useToast()
+  const { executeRecaptcha } = useGoogleReCaptcha()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -31,13 +32,29 @@ export default function ContactForm() {
       message: '',
     },
   })
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // TODO: Implement authentication (NextAuth) and link to my email
-    console.log(values)
-    toast({
-      variant: 'success',
-      description: 'Your message has been sent.',
-    })
+  const [state, handleSubmitFormspree] = useFormFS('contactForm', {
+    data: { 'g-recaptcha-response': executeRecaptcha },
+  })
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    try {
+      handleSubmitFormspree(values)
+        .then(() => {
+          toast({
+            description: 'Your message has been sent successfully!',
+          })
+          form.reset()
+        })
+        .catch(error => {
+          console.log(error)
+          toast({
+            variant: 'destructive',
+            description:
+              'There was an error submitting the form. Please contact me using my socials',
+          })
+        })
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <div className='mx-auto w-full max-w-md bg-white dark:bg-black'>
@@ -132,6 +149,7 @@ export default function ContactForm() {
           <Button
             className='group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]'
             type='submit'
+            disabled={state.submitting}
           >
             Send &rarr;
             <BottomGradient />
