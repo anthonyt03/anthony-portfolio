@@ -9,6 +9,7 @@ import ScrollIndicator from '~/components/ScrollIndicator'
 import { navItems } from '~/constants/constants'
 import { FormspreeProvider } from '@formspree/react'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
+import ProjectSection from './ProjectSection'
 
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''
 
@@ -28,7 +29,7 @@ export default function HomePage() {
           <IntroSection />
           {/* Professional Experience */}
           <TimelineSection />
-          <div className='h-screen w-full'></div>
+          <ProjectSection />
         </div>
       </GoogleReCaptchaProvider>
     </FormspreeProvider>
