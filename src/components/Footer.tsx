@@ -1,5 +1,8 @@
+'use client'
 import React from 'react'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+import { LinkPreview } from '~/components/ui/link-preview'
 
 const Footer = () => {
   return (
@@ -15,7 +18,9 @@ const Footer = () => {
           rel='noopener noreferrer'
           className='relative z-10 m-2 inline-block p-2'
         >
-          <FaLinkedin size={16} />
+          <LinkPreview url='https://www.linkedin.com/in/anthony03/'>
+            <FaLinkedin size={16} color='white' />
+          </LinkPreview>
         </a>
 
         {/* GitHub Icon */}
@@ -25,7 +30,9 @@ const Footer = () => {
           rel='noopener noreferrer'
           className='relative z-10 m-2 inline-block p-2'
         >
-          <FaGithub size={16} />
+          <LinkPreview url='https://github.com/anthonyt03'>
+            <FaGithub size={16} color='white' />
+          </LinkPreview>
         </a>
       </div>
     </footer>

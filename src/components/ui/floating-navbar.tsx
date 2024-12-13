@@ -7,6 +7,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { cn } from "~/lib/utils";
+import { Separator  } from "~/components/ui/separator";
 import Link from "next/link";
 import ContactForm from "../ContactForm";
 import { Modal, ModalTrigger, ModalBody, ModalContent } from "./animated-modal";
