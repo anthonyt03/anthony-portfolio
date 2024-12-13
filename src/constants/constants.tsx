@@ -5,7 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '~/components/ui/tooltip'
-import { BriefcaseBusiness, Cog, House } from 'lucide-react'
+import { BriefcaseBusiness, Hammer, House } from 'lucide-react'
 
 // Timeline
 const skills = [
@@ -111,7 +111,7 @@ export const navItems = [
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
-            <Cog className='h-4 w-4' />
+            <Hammer className='h-4 w-4' />
           </TooltipTrigger>
           <TooltipContent side='bottom'>
             <p>Projects</p>
